@@ -1,3 +1,16 @@
 {
-  "apps": []
+  "apps": [
+    {
+      "id": "genify_ai",
+      "name": "Genify Ai",
+      "icon": "https://github.com/conmangangqua/apero_app/releases/download/prod/genify_ai_icon.png",
+      "platform": "Android",
+      "description": "",
+      "features": [],
+      "downloads": {
+        "dev": "https://github.com/conmangangqua/apero_app/releases/download/dev/genify_ai_dev.apk",
+        "prod": "https://github.com/conmangangqua/apero_app/releases/download/prod/genify_ai_prod.apk"
+      }
+    }
+  ]
 }
