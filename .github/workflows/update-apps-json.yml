@@ -67,10 +67,10 @@ jobs:
             RELEASE_TAG="${{ inputs.release_tag }}"
             if [ -n "$RELEASE_TAG" ] && [ "$RELEASE_TAG" != "" ]; then
               echo "Fetching specific release: $RELEASE_TAG"
-              RELEASE_DATA=$(gh api repos/${{ github.repository }}/releases/tags/$RELEASE_TAG --jq '{tag_name: .tag_name, name: .name}')
+              RELEASE_DATA=$(gh api repos/${{ github.repository }}/releases/tags/$RELEASE_TAG --jq '{tag_name: .tag_name, name: .name}' 2>/dev/null || echo "{}")
             else
               echo "Fetching latest release via API"
-              RELEASE_DATA=$(gh api repos/${{ github.repository }}/releases/latest --jq '{tag_name: .tag_name, name: .name}')
+              RELEASE_DATA=$(gh api repos/${{ github.repository }}/releases/latest --jq '{tag_name: .tag_name, name: .name}' 2>/dev/null || echo "{}")
             fi
             
             echo "Release data: $RELEASE_DATA"
